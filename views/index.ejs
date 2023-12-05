@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-white">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,9 +7,39 @@
     <link rel="stylesheet" href="/css/output.css" />
     <title>Document</title>
   </head>
-  <body class="h-full">
-    <h1 class="text-3xl">Create Your VERY OWN Todolist!</h1>
-    <a href="/login"> Login</a>
-    <a href="/signup"> Signup</a>
+  <body>
+    <div
+      class="bg-blue-200 h-screen overflow-hidden flex items-center justify-center"
+    >
+      <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div
+          class="flex align-middle mx-auto max-w-2xl py-32 sm:py-48 lg:py-56"
+        >
+          <div class="text-center">
+            <h1
+              class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Log you scuba dives with our Scuba Logger
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              With Scuba Logger you will never miss you scuba diving data like
+              dive depth, time, weather etc.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="/login"
+                class="rounded-md bg-indigo-600 px-11 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >Log In</a
+              >
+              <a
+                href="/signup"
+                class="text-base font-semibold leading-6 text-gray-900"
+                >Sign up <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
