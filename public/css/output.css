@@ -748,6 +748,11 @@ select {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -780,6 +785,10 @@ select {
   height: 100vh;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -806,10 +815,6 @@ select {
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .gap-x-6 {
@@ -848,6 +853,10 @@ select {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-11 {
