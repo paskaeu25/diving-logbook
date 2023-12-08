@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="h-full">
-    <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
     <div class="min-h-full">
       <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,9 +55,30 @@
       </header>
       <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <!-- Your content -->
-
-          <div class="border sm:mx-auto sm:w-full sm:max-w-sm p-4 rounded-md">
+          <button class=""></button>
+          <button
+            id="addDive"
+            type="button"
+            class="text-white bg-blue-600 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-500 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-600 dark:focus:ring-blue-500"
+          >
+            <svg
+              class="w-6 h-6 dark:text-gray-800 text-white mr-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.546.5a9.5 9.5 0 1 0 9.5 9.5 9.51 9.51 0 0 0-9.5-9.5ZM13.788 11h-3.242v3.242a1 1 0 1 1-2 0V11H5.304a1 1 0 0 1 0-2h3.242V5.758a1 1 0 0 1 2 0V9h3.242a1 1 0 1 1 0 2Z"
+              />
+            </svg>
+            Add Dive
+          </button>
+          <!-- Log dive form -->
+          <div
+            id="logDiveForm"
+            class="border sm:mx-auto sm:w-full sm:max-w-sm p-4 rounded-md hidden"
+          >
             <form class="space-y-3" action="/dives/createDive" method="POST">
               <input
                 type="text"
@@ -183,12 +196,12 @@
                   <div class="flex mt-4 md:mt-6">
                     <a
                       href="#"
-                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-800 bg-transparent border border-gray-800 rounded-lg hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-800"
                       >Edit</a
                     >
                     <a
                       href="#"
-                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 ms-3"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-800 bg-red-400 border border-red-400 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 ms-3"
                       >Delete</a
                     >
                   </div>
@@ -202,5 +215,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/addDive.js"></script>
   </body>
 </html>
