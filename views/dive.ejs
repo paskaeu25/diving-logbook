@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="h-full">
-    <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
     <div class="min-h-full">
       <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -51,13 +43,42 @@
       <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dives</h1>
+          <h2 class="text-lg">
+            Hello, <%=user.userName[0].toUpperCase() + user.userName.slice(1) %>
+          </h2>
+          <h2>
+            You have total of
+            <span class="text-blue-600 font-bold text-lg"><%= total %></span>
+            dive logs.
+          </h2>
         </div>
       </header>
       <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <!-- Your content -->
-
-          <div class="border sm:mx-auto sm:w-full sm:max-w-sm p-4 rounded-md">
+          <button class=""></button>
+          <button
+            id="addDive"
+            type="button"
+            class="text-white bg-blue-600 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-500 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-600 dark:focus:ring-blue-500"
+          >
+            <svg
+              class="w-6 h-6 dark:text-gray-800 text-white mr-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.546.5a9.5 9.5 0 1 0 9.5 9.5 9.51 9.51 0 0 0-9.5-9.5ZM13.788 11h-3.242v3.242a1 1 0 1 1-2 0V11H5.304a1 1 0 0 1 0-2h3.242V5.758a1 1 0 0 1 2 0V9h3.242a1 1 0 1 1 0 2Z"
+              />
+            </svg>
+            Add Dive
+          </button>
+          <!-- Log dive form -->
+          <div
+            id="logDiveForm"
+            class="border sm:mx-auto sm:w-full sm:max-w-sm p-4 rounded-md hidden"
+          >
             <form class="space-y-3" action="/dives/createDive" method="POST">
               <input
                 type="text"
@@ -93,10 +114,107 @@
               </button>
             </form>
           </div>
+
+          <!-- GET /dives -->
+
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 place-items-center"
+          >
+            <% dives.forEach(divelog => { %>
+            <div data-id="<%= divelog._id %>">
+              <div
+                class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              >
+                <div class="flex justify-end px-4 pt-4">
+                  <button
+                    id="dropdownButton"
+                    data-dropdown-toggle="dropdown"
+                    class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                    type="button"
+                  >
+                    <span class="sr-only">Open dropdown</span>
+                    <svg
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 16 3"
+                    >
+                      <path
+                        d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"
+                      />
+                    </svg>
+                  </button>
+                  <!-- Dropdown menu -->
+                  <div
+                    id="dropdown"
+                    class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                  >
+                    <ul class="py-2" aria-labelledby="dropdownButton">
+                      <li>
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          >Edit</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          >Export Data</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center pb-10">
+                  <h5
+                    class="mb-1 text-xl font-medium text-gray-900 dark:text-white"
+                  >
+                    <%= divelog.location %>
+                  </h5>
+                  <span
+                    class="text-sm text-gray-500 dark:text-gray-400 text-center"
+                    ><%= divelog.Date %></span
+                  >
+                  <h6 class="mb-1 text-gray-900 dark:text-white">
+                    Depth: <%= divelog.depth %>
+                  </h6>
+
+                  <p class="mb-1 text-gray-900 dark:text-white">
+                    <%= divelog.notes %>
+                  </p>
+
+                  <div class="flex mt-4 md:mt-6">
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-800 bg-transparent border border-gray-800 rounded-lg hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                      >Edit</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-800 bg-red-400 border border-red-400 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 ms-3"
+                      >Delete</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
         </div>
       </main>
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/addDive.js"></script>
   </body>
 </html>
