@@ -30,4 +30,15 @@ module.exports = {
       console.log(err);
     }
   },
+
+  deleteDive: async (req, res) => {
+    console.log(req.body.diveIdFromJSFile);
+    try {
+      await Todo.findOneAndDelete({ _id: req.body.diveIdFromJSFile });
+      console.log('Deleted Dive Log');
+      res.json('Deleted It');
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
