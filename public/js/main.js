@@ -15,7 +15,8 @@ Array.from(todoComplete).forEach((el) => {
 });
 
 async function deleteDive() {
-  const todoId = this.parentNode.dataset.id;
+  const diveId = this.parentNode.parentNode.parentNode.parentNode.dataset.id;
+  console.log(diveId);
   try {
     const response = await fetch('dives/deleteDive', {
       method: 'delete',
