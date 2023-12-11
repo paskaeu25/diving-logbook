@@ -15,7 +15,7 @@ const DiveSchema = new mongoose.Schema({
   },
   notes: {
     type: String,
-    required: true,
+    required: false,
   },
   userId: {
     type: String,
