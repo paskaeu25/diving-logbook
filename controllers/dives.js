@@ -34,7 +34,7 @@ module.exports = {
   deleteDive: async (req, res) => {
     console.log(req.body.diveIdFromJSFile);
     try {
-      await Todo.findOneAndDelete({ _id: req.body.diveIdFromJSFile });
+      await Dive.findOneAndDelete({ _id: req.body.diveIdFromJSFile });
       console.log('Deleted Dive Log');
       res.json('Deleted It');
     } catch (err) {
