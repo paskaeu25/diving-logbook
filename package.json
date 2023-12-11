@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css --watch"
+    "watch": "npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css --watch",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "MIT",
