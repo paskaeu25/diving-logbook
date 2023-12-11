@@ -184,7 +184,7 @@
                   </h5>
                   <span
                     class="text-sm text-gray-500 dark:text-gray-400 text-center"
-                    ><%= divelog.Date %></span
+                    ><%= divelog.Date.toISOString().split('T')[0] %></span
                   >
                   <h6 class="mb-1 text-gray-900 dark:text-white">
                     Depth: <%= divelog.depth %>
