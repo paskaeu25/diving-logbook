@@ -1,44 +1,38 @@
-# Introduction
+# Scuba Logger
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+Keep your diving history safe with a Scuba Logger. Sign up, Log in, and log your dives!
 
----
+![](https://github.com/paskaeu25/diving-logbook/blob/main/scuba-logger-demo.gif)
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
 
----
+**Link to project:** [Scuba Logger](https://scuba-logger.onrender.com/)
 
-# Objectives
+## How It's Made
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+**Tech used:** EJS, Tailwind, MongoDB/Mongoose, Node, Express, JavaScript, HTML, CSS
 
----
+Scuba Logger is a full-stack web app that allows users to log their scuba diving experiences. Built using MongoDB, Express.js, EJS, and Node.js (MEEN stack), it provides users with a seamless experience to track important data such as dive depth, location, and date. It is built using the MVC design pattern for future scaling and maintainability. The front end is crafted with EJS and styled with Tailwind CSS for a cohesive and responsive design. Node and Express handle the authentication while MongoDB serves as a robust database solution.
 
-# Who is this for? 
+**Packages/Dependencies used:** bcrypt, connect-mongo, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, passport, validator
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+## Optimizations
 
----
+- Edit scuba log
+- Filter logs
+- Search logs
 
-# Packages/Dependencies used 
+## Lessons Learned
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+- **Git Proficiency**: Strengthened branching skills in Git, enabling better project management and collaboration with version control.
+- **EJS Mastery**: Gained extensive hands-on experience with EJS templates, facilitating dynamic content rendering and enhancing frontend interactivity.
+- **Tailwind CSS Practice**: Delved into Tailwind CSS, refining UI design proficiency and speeding up styling processes through utility-based classes.
+- **MongoDB with Mongoose Schemas**: Leveraged Mongoose schemas in conjunction with MongoDB, benefiting from the ease of defining and enforcing data structures within the application. 
+- **Express Expertise**: Enhanced familiarity with Express, streamlining backend development and enabling efficient route handling and middleware implementation.
+- **MVC Architecture Implementation**: Employed the Model-View-Controller (MVC) architecture, enhancing code organization and separation of concerns. 
 
----
 
-# Install all the dependencies or node packages used for development via Terminal
 
-`npm install` 
 
----
 
-# Things to add
-
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
- 
- Have fun testing and improving it! 😎
 
 
