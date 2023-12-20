@@ -4,7 +4,11 @@ module.exports = {
   getDives: async (req, res) => {
     console.log(req.user);
     try {
-      const diveLogs = await Dive.find({ userId: req.user.id });
+      const diveLogs = await Dive.find({ userId: req.user.id })
+        .sort({
+          Date: 'desc',
+        })
+        .lean();
       const totalLogs = await Dive.countDocuments({ userId: req.user.id });
       res.render('dive.ejs', {
         user: req.user,
